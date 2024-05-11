@@ -6,4 +6,4 @@ phases:
     commands:
       - ls
       - aws --version
-      - aws cloudformation update-stack --stack-name web-app --use-previous-template
+      - aws cloudformation update-stack --stack-name web-app --template-url https://ligh1s-github-actions.s3.ap-south-1.amazonaws.com/file.yaml
