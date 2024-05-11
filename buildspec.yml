@@ -6,4 +6,4 @@ phases:
     commands:
       - ls
       - aws --version
-      - aws cloudformation list-stacks
+      - aws cloudformation update-stack --stack-id arn:aws:cloudformation:ap-south-1:533267257785:stack/web-app/65661b70-0fc1-11ef-980b-06860d307d0e --name web-app
