@@ -6,3 +6,4 @@ phases:
     commands:
       - ls
       - aws --version
+      - aws cloudformation list-stacks
