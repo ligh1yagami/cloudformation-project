@@ -1,0 +1,11 @@
+version: 0.2
+
+run-as: ligh1
+
+phases:
+  install:
+    run-as: ligh1
+    on-failure: CONTINUE
+    commands:
+      - ls
+      - aws --version
