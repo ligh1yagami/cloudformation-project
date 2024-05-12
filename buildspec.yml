@@ -7,6 +7,7 @@ phases:
       - ls
       - aws --version
       - cat file.yaml
-      - aws cloudformation update-stack --stack-name web-app --template-url https://github.com/ligh1yagami/cloudformation-project/blob/main/file.yaml
+      - aws s3 sync . s3://ligh1s-github-actions
+      - aws cloudformation update-stack --stack-name web-app ---template-url https://ligh1s-github-actions.s3.ap-south-1.amazonaws.com/file.yaml
 
 
