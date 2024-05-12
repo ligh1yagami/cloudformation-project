@@ -1,74 +1,74 @@
-# Resources:
-#   myVPC:
-#     Type: AWS::EC2::VPC
-#     Properties:
-#       CidrBlock: 10.0.0.0/17
-#       EnableDnsSupport: 'true'
-#       EnableDnsHostnames: 'true'
-#       Tags:
-#        - Key: purpose
-#          Value: cloudformation
-#        - Key: name
-#          Value: my-vpc
-#   myPublicSubnet1:
-#     Type: AWS::EC2::Subnet
-#     Properties:
-#       VpcId:
-#         Ref: myVPC
-#       CidrBlock: 10.0.1.0/24
-#       AvailabilityZone: "ap-south-1b"
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#       - Key: name
-#         Value: myPubliSubnet1
-#   myPublicSubnet2:
-#     Type: AWS::EC2::Subnet
-#     Properties:
-#       VpcId:
-#         Ref: myVPC
-#       CidrBlock: 10.0.2.0/24
-#       AvailabilityZone: "ap-south-1b"
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#       - Key: name
-#         Value: myPublicSubnet2
-#   myPrivateSubnet1:
-#     Type: AWS::EC2::Subnet
-#     Properties:
-#       VpcId:
-#         Ref: myVPC
-#       CidrBlock: 10.0.3.0/24
-#       AvailabilityZone: "ap-south-1b"
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#   myPrivateSubnet2:
-#     Type: AWS::EC2::Subnet
-#     Properties:
-#       VpcId:
-#         Ref: myVPC
-#       CidrBlock: 10.0.4.0/24
-#       AvailabilityZone: "ap-south-1b"
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#   myInternetGateway:
-#     Type: AWS::EC2::InternetGateway
-#     Properties:
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#       - Key: name
-#         Value: our-ig
-#   myRouteTable:
-#     Type: AWS::EC2::RouteTable
-#     Properties:
-#       VpcId:  
-#         Ref: myVPC
-#       Tags:
-#       - Key: purpose
-#         Value: cloudformation
-#       - Key: name
-#         Value: my-rt
+Resources:
+  myVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/17
+      EnableDnsSupport: 'true'
+      EnableDnsHostnames: 'true'
+      Tags:
+       - Key: purpose
+         Value: cloudformation
+       - Key: name
+         Value: my-vpc
+  myPublicSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: myPubliSubnet1
+  myPublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: myPublicSubnet2
+  myPrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.3.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+  myPrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.4.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+  myInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: our-ig
+  myRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:  
+        Ref: myVPC
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: my-rt
