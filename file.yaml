@@ -8,6 +8,8 @@ Resources:
       Tags:
        - Key: purpose
          Value: cloudformation
+       - Key: name
+         Value: my-vpc
   myPublicSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
@@ -18,6 +20,8 @@ Resources:
       Tags:
       - Key: purpose
         Value: cloudformation
+      - Key: name
+        Value: myPubliSubnet1
   myPublicSubnet2:
     Type: AWS::EC2::Subnet
     Properties:
@@ -28,6 +32,8 @@ Resources:
       Tags:
       - Key: purpose
         Value: cloudformation
+      - Key: name
+        Value: myPublicSubnet2
   myPrivateSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
@@ -48,4 +54,21 @@ Resources:
       Tags:
       - Key: purpose
         Value: cloudformation
-    
+  myInternetGateway:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: our-ig
+  myRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId:  
+        Ref: myVPC
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+      - Key: name
+        Value: my-rt
