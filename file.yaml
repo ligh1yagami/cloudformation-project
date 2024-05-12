@@ -8,7 +8,7 @@ Resources:
       Tags:
        - Key: purpose
          Value: cloudformation
-  mySubnet2:
+  myPublicSubnet1:
     Type: AWS::EC2::Subnet
     Properties:
       VpcId:
@@ -18,3 +18,34 @@ Resources:
       Tags:
       - Key: purpose
         Value: cloudformation
+  myPublicSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+  myPrivateSubnet1:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.3.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+  myPrivateSubnet2:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId:
+        Ref: myVPC
+      CidrBlock: 10.0.4.0/24
+      AvailabilityZone: "ap-south-1b"
+      Tags:
+      - Key: purpose
+        Value: cloudformation
+    
